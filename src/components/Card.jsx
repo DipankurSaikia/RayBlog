@@ -5,6 +5,7 @@ import { MdDelete } from "react-icons/md";
 import { useBlog } from "../Contexts/BlogContext";
 import st from "../appwrite/storage";
 import { CgProfile } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 function Card({ blog, editStatus = false }) {
   const [uploadedUrl, setUploadedUrl] = useState(null);
@@ -74,7 +75,11 @@ function Card({ blog, editStatus = false }) {
         <h5 className="font-bold text-[var(--text-color1)] mb-3 overflow-hidden break-all line-clamp-2">
           {blog.title}
         </h5>
-
+        <Link to={`/user/${blog.userid}`}
+         onClick={(e) => {
+          e.stopPropagation(); // Prevent click from bubbling up
+        }}
+        >
         <div className="person-image-name flex items-center gap-3 absolute bottom-4">
           <div className="h-8 w-8 rounded-full overflow-hidden flex items-center justify-center bg-gray-300">
             {uploadedUrl ? (
@@ -95,6 +100,7 @@ function Card({ blog, editStatus = false }) {
             {blog.userName}
           </span>
         </div>
+        </Link>
       </div>
 
       {editStatus && (

@@ -35,29 +35,29 @@ function Post({
     }
   };
 
-    const fetchExistingImage = async () => {
-      try {
-        const url = st.profileImages.getPreview(post.userid);
-  
-        // Validate the URL points to an accessible image
-        const response = await fetch(url, { method: "HEAD" });
-        if (response.ok && response.headers.get("content-type").includes("image")) {
-          setUploadedUrl(url); // Set the valid image URL
-        } else {
-          setUploadedUrl(null); // Invalid or non-existent image
-        }
-      } catch (error) {
-        console.log("Error fetching or validating profile image:", error);
-        setUploadedUrl(null);
-      }
-    };
+  const fetchExistingImage = async () => {
+    try {
+      const url = st.profileImages.getPreview(post.userid);
 
-    useEffect(() => {
-      if (post && post.userid) {
-        fetchExistingImage();
+      // Validate the URL points to an accessible image
+      const response = await fetch(url, { method: "HEAD" });
+      if (response.ok && response.headers.get("content-type").includes("image")) {
+        setUploadedUrl(url); // Set the valid image URL
+      } else {
+        setUploadedUrl(null); // Invalid or non-existent image
       }
-    }, [post]);
-    
+    } catch (error) {
+      console.log("Error fetching or validating profile image:", error);
+      setUploadedUrl(null);
+    }
+  };
+
+  useEffect(() => {
+    if (post && post.userid) {
+      fetchExistingImage();
+    }
+  }, [post]);
+
 
   if (error) {
     // Render 404 when post is not found
@@ -84,7 +84,12 @@ function Post({
 
   return post ? (
     <div className="preview-wrapper p-5 bg-[var(--secondary-color)] rounded-lg flex flex-col items-center min-h-full relative">
-      <div className="person-image-name flex items-center gap-3 absolute left-5 top-2">
+      <Link to={`/user/${post.userid}`}
+        onClick={(e) => {
+          e.stopPropagation(); // Prevent click from bubbling up
+        }}
+      >
+        <div className="person-image-name flex items-center gap-3 absolute left-5 top-2">
           <div className="h-8 w-8 rounded-full overflow-hidden flex items-center justify-center bg-gray-300">
             {uploadedUrl ? (
               <img
@@ -100,6 +105,7 @@ function Post({
             {post.userName}
           </span>
         </div>
+      </Link>
       {/* Title Section */}
       <div className="preview-title mb-4 mt-7">
         <h1 className="text-[var(--text-color1)] text-2xl font-semibold break-all">
