@@ -9,7 +9,7 @@ import Create from "./pages/Create";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Verify from './pages/Verify'
-import Preview from "./components/Create components/Preview/Preview";
+import Preview from "./components/Createcomponents/Preview/Preview";
 import { BlogProvider } from "./Contexts/BlogContext";
 import { AuthProvider } from "./appwrite/AuthContext";
 import PrivateRoutes from "./appwrite/PrivateRoutes";

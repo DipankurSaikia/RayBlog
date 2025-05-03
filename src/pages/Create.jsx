@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FileUploader } from "../components/Create components/fileUploader/fileUploader";
+import { FileUploader } from "../components/Createcomponents/fileUploader/fileUploader";
 import BlogEditor from "../components/tinymceEditor/BlogEditor";
-import Preview from "../components/Create components/Preview/Preview";
+import Preview from "../components/Createcomponents/Preview/Preview";
 import { useBlog } from "../Contexts/BlogContext";
 import { useAuth } from "../appwrite/AuthContext";
 import st from "../appwrite/storage";
