@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }) => {
         userInfo.password1
       );
   
-      const link = account.createVerification('http://localhost:5173/verify');
+      const link = account.createVerification('https://rayblog-omega.vercel.app/verify');
       await db.userProfile.create({ userName: userInfo.name},id);
   
       navigate('/login');
