@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from "react";
-import { UploadIcon } from "./uploadIcon";
-import { UploadText } from "./uploadText";
+import { UploadIcon } from "./UploadIcon";
+import { UploadText } from "./UploadText";
 import { FILE_UPLOAD_MAX_SIZE } from "./types";
 
 export function FileUploader({
