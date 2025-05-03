@@ -14,7 +14,7 @@ function Layout() {
   return (
     <>
     <Header onToggleSidebar={toggleSidebar}/>
-    <div className="hero-wrapper w-vw h-[90vh] pt-4 flex gap-2">
+    <div className="hero-wrapper w-vw h-[95vh] pt-4 flex gap-2">
       <Sidebar close = {isSidebarOpen} />
       <div className="hero-right-content h-full w-full overflow-auto px-4">
        <Outlet/>
