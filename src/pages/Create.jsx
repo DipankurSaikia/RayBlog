@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FileUploader } from "../components/Createcomponents/fileUploader/fileUploader";
+import { FileUploader } from "../components/Createcomponents/fileUploader/FileUploader";
 import BlogEditor from "../components/tinymceEditor/BlogEditor";
 import Preview from "../components/Createcomponents/Preview/Preview";
 import { useBlog } from "../Contexts/BlogContext";
