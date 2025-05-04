@@ -27,7 +27,7 @@ function Preview({ title="Title",  category = 'Nature', content ="Write the cont
 
 
     return (
-      <div className="preview-wrapper p-5 bg-[var(--secondary-color)] rounded-lg flex flex-col items-center">
+      <div className="preview-wrapper p-5 bg-[var(--secondary-color)] rounded-lg flex flex-col items-center relative">
           <div className="person-image-name flex items-center justify-center gap-3 absolute left-5 top-2 z-10">
           <div className="h-8 w-8 rounded-full overflow-hidden">
             <img
